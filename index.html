@@ -1,1 +1,461 @@
-test dns
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Doka-Bastelstube | 3D-Druck & Microcontroller</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0d1117;
+            color: #f1f5f9;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(13, 17, 23, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #30363d;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #00e5ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+            background:
+                radial-gradient(circle at top, #12304a 0%, transparent 45%),
+                #0d1117;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid #00e5ff;
+            border-radius: 30px;
+            color: #00e5ff;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            color: #00e5ff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #b8c1cc;
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #00e5ff;
+            color: #081018;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.25);
+        }
+
+        /* Allgemeine Sections */
+        section {
+            padding: 100px 25px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-text {
+            text-align: center;
+            color: #9ba7b4;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        /* Karten */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 15px;
+            padding: 35px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #00e5ff;
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: #9ba7b4;
+        }
+
+        /* Über uns */
+        .about {
+            background: #111820;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #b8c1cc;
+            font-size: 1.1rem;
+        }
+
+        /* Projekte */
+        .project-card {
+            position: relative;
+            min-height: 180px;
+            display: flex;
+            align-items: end;
+            background:
+                linear-gradient(to top, rgba(0,0,0,0.8), transparent),
+                #1a2530;
+        }
+
+        /* Kontakt */
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 600px;
+            margin: auto;
+            padding: 40px;
+            background: #161b22;
+            border-radius: 15px;
+            border: 1px solid #30363d;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #30363d;
+            text-align: center;
+            padding: 30px 20px;
+            color: #77808a;
+        }
+
+        /* Mobile */
+        @media (max-width: 650px) {
+            nav ul {
+                gap: 12px;
+                font-size: 0.85rem;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            .nav-container {
+                padding: 15px;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">⚙️ Doka-Bastelstube</div>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#angebote">Projekte</a></li>
+                <li><a href="#ueber-uns">Über uns</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <div class="badge">
+                🔧 Ideen. Technik. Kreativität.
+            </div>
+
+            <h1>
+                Willkommen in der<br>
+                <span>Doka-Bastelstube.</span>
+            </h1>
+
+            <p>
+                Wir entwickeln, basteln und experimentieren mit
+                3D-Druck, Microcontrollern und spannenden
+                DIY-Technikprojekten.
+            </p>
+
+            <a href="#angebote" class="button">
+                Projekte entdecken ↓
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- Angebote -->
+    <section id="angebote">
+        <div class="container">
+
+            <h2 class="section-title">Was wir machen</h2>
+
+            <p class="section-text">
+                Von der ersten Idee bis zum fertigen Projekt.
+                Hier trifft Hardware auf Kreativität.
+            </p>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="icon">🖨️</div>
+                    <h3>3D-Druck</h3>
+                    <p>
+                        Eigene Modelle, praktische Helfer,
+                        Ersatzteile und kreative Projekte aus dem
+                        3D-Drucker.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">⚡</div>
+                    <h3>Microcontroller</h3>
+                    <p>
+                        Arduino, ESP32 und andere kleine Computer
+                        für große Ideen.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🤖</div>
+                    <h3>DIY-Projekte</h3>
+                    <p>
+                        Elektronik, Sensoren, LEDs, Automatisierung
+                        und alles, was sonst noch Spaß macht.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Über uns -->
+    <section class="about" id="ueber-uns">
+        <div class="container">
+
+            <div class="about-content">
+
+                <h2 class="section-title">
+                    Aus einer Idee wird ein Projekt.
+                </h2>
+
+                <p>
+                    Die Doka-Bastelstube ist unser Platz für kreative
+                    Technikprojekte. Hier wird ausprobiert, gebaut,
+                    programmiert, gedruckt und natürlich auch mal
+                    etwas wieder auseinandergebaut.
+                    <br><br>
+                    Denn die besten Projekte beginnen oft mit:
+                    <strong>„Was passiert eigentlich, wenn...?“</strong>
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Projekt Beispiele -->
+    <section id="projekte">
+        <div class="container">
+
+            <h2 class="section-title">Unsere Projekte</h2>
+
+            <p class="section-text">
+                Eine Auswahl aus der Bastelstube.
+            </p>
+
+            <div class="cards">
+
+                <div class="card project-card">
+                    <div>
+                        <div class="icon">💡</div>
+                        <h3>Smart Home & LEDs</h3>
+                        <p>Automatisierung, Beleuchtung und Sensoren.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div>
+                        <div class="icon">🧠</div>
+                        <h3>ESP32 Projekte</h3>
+                        <p>WLAN, Webserver und smarte Steuerungen.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div>
+                        <div class="icon">🧩</div>
+                        <h3>3D-Design</h3>
+                        <p>Von der Idee zum eigenen gedruckten Bauteil.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Kontakt -->
+    <section class="contact" id="kontakt">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Interesse an einem Projekt?
+            </h2>
+
+            <p class="section-text">
+                Du hast eine Idee, eine Frage oder möchtest einfach
+                sehen, was als Nächstes aus der Bastelstube kommt?
+            </p>
+
+            <div class="contact-box">
+
+                <div class="icon">📬</div>
+
+                <h3>Kontakt</h3>
+
+                <p style="margin: 15px 0 25px; color: #9ba7b4;">
+                    Bald findest du hier weitere Informationen,
+                    Projekte und Möglichkeiten zur Kontaktaufnahme.
+                </p>
+
+                <a href="mailto:info@doka-bastelstube.de"
+                   class="button">
+                    E-Mail schreiben
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            © 2026 Doka-Bastelstube.de ·
+            3D-Druck · Microcontroller · DIY
+        </p>
+    </footer>
+
+</body>
+</html>
