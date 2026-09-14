@@ -3,62 +3,125 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Elektronische Trainingszielanlage</title>
+<title>DoKa Schießsport Anlagen</title>
 <meta name="description" content="Modulare elektronische Trainingszielanlage für das private Schießtraining.">
 <style>
-:root{--bg:#081019;--panel:#101c28;--panel2:#152534;--text:#eef5f8;--muted:#9db0bd;--accent:#1fca8a;--line:#263949}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#071018,#0b1620 55%,#081018);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
-a{color:inherit;text-decoration:none}.wrap{max-width:1120px;margin:auto;padding:0 24px}
+:root{
+  --bg:#081019;--panel:#101c28;--panel2:#152534;--text:#eef5f8;
+  --muted:#9db0bd;--accent:#1fca8a;--line:#263949;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:linear-gradient(180deg,#071018,#0b1620 55%,#081018);
+  color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:auto;padding:0 24px}
 nav{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
-.logo{font-weight:800;letter-spacing:.04em}.logo span{color:var(--accent)}nav .links{display:flex;gap:24px;color:var(--muted);font-size:14px}
+.logo{font-weight:800;letter-spacing:.04em}.logo span{color:var(--accent)}
+nav .links{display:flex;gap:24px;color:var(--muted);font-size:14px}
 .hero{padding:92px 0 80px;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
 .kicker{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.13em;font-size:12px}
-h1{font-size:clamp(42px,6vw,72px);line-height:.98;margin:16px 0 24px;letter-spacing:-.045em}h2{font-size:34px;margin:0 0 14px}h3{margin:0 0 8px}.lead{font-size:20px;line-height:1.55;color:var(--muted);max-width:650px}
-.btn{display:inline-block;margin-top:28px;padding:13px 20px;border-radius:8px;background:var(--accent);color:#06110d;font-weight:800}.hero-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 20px 60px #0005}
-.placeholder{aspect-ratio:4/3;border:1px dashed #547080;border-radius:12px;display:grid;place-items:center;color:#708694;text-align:center;padding:20px;background:#0c1720}.placeholder strong{display:block;color:#b9cbd4;margin-bottom:5px}
-section{padding:80px 0;border-top:1px solid var(--line)}.intro{max-width:700px;margin-bottom:34px;color:var(--muted);line-height:1.7}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}.card p{color:var(--muted);line-height:1.6;margin-bottom:0}.icon{font-size:25px;margin-bottom:18px}
-.shots{display:grid;grid-template-columns:1fr 1fr;gap:22px}.shot{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px}.shot img{width:100%;display:block;border-radius:10px}.shot figcaption{padding:12px 4px 2px;color:var(--muted);font-size:14px}
-.spec{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:850px}.spec div{padding:17px 19px;background:var(--panel);border:1px solid var(--line);border-radius:10px}.spec b{display:block;margin-bottom:5px}.spec span{color:var(--muted)}
+h1{font-size:clamp(42px,6vw,72px);line-height:.98;margin:16px 0 24px;letter-spacing:-.045em}
+h2{font-size:34px;margin:0 0 14px}h3{margin:0 0 8px}
+.lead{font-size:20px;line-height:1.55;color:var(--muted);max-width:650px}
+.btn{display:inline-block;margin-top:28px;padding:13px 20px;border-radius:8px;background:var(--accent);color:#06110d;font-weight:800}
+.hero-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 20px 60px #0005}
+
+/* Alle Bilder werden automatisch passend zugeschnitten – kein HTML-Anpassen nötig. */
+.media{
+  width:100%;height:100%;display:block;object-fit:cover;
+  object-position:center;border-radius:11px;
+}
+.hero-media{aspect-ratio:4/3;overflow:hidden;border-radius:11px;background:#0c1720}
+.screenshot-media{aspect-ratio:16/9;overflow:hidden;background:#0c1720}
+.product-media{aspect-ratio:4/3;overflow:hidden;background:#0c1720}
+.detail-media{aspect-ratio:4/3;overflow:hidden;background:#0c1720}
+
+section{padding:80px 0;border-top:1px solid var(--line)}
+.intro{max-width:700px;margin-bottom:34px;color:var(--muted);line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+.card p{color:var(--muted);line-height:1.6;margin-bottom:0}.icon{font-size:25px;margin-bottom:18px}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.shot{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;overflow:hidden}
+.shot figcaption{padding:12px 4px 2px;color:var(--muted);font-size:14px}
+.spec{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:850px}
+.spec div{padding:17px 19px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.spec b{display:block;margin-bottom:5px}.spec span{color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gallery .shot{padding:10px}
 footer{padding:40px 0 60px;color:var(--muted);font-size:13px}
-@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:60px}.grid,.shots,.spec{grid-template-columns:1fr}nav .links{display:none}}
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;padding-top:60px}
+  .grid,.shots,.spec{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+  nav .links{display:none}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
+
 <nav>
-  <div class="logo">TARGET<span>LAB</span></div>
-  <div class="links"><a href="#funktion">Funktion</a><a href="#technik">Technik</a><a href="#screens">Screenshots</a><a href="#kontakt">Projekt</a></div>
+  <div class="logo">DoKa <span>Schießsport Anlagen</span></div>
+  <div class="links">
+    <a href="#funktion">Funktion</a><a href="#technik">Technik</a>
+    <a href="#screens">Screenshots</a><a href="#galerie">Galerie</a><a href="#kontakt">Projekt</a>
+  </div>
 </nav>
 
 <header class="hero">
   <div>
     <div class="kicker">Privates Schießtraining · modular · digital</div>
     <h1>Elektronische Treffer­auswertung neu gedacht.</h1>
-    <p class="lead">Eine modulare Trainingszielanlage mit akustischer Treffererfassung, digitaler Auswertung und übersichtlichem OSD – entwickelt für das private Training.</p>
+    <p class="lead">
+      Eine modulare Trainingszielanlage mit akustischer Treffererfassung,
+      digitaler Auswertung und übersichtlichem OSD – entwickelt für das private Training.
+    </p>
     <a class="btn" href="#funktion">Funktionsumfang ansehen</a>
   </div>
+
   <div class="hero-card">
-    <div class="placeholder"><div><strong>Produktbild / Musterbild</strong>Hier später ein generiertes Foto des Zielrahmens einsetzen.</div></div>
+    <div class="hero-media">
+      <!-- Datei: images/bild1_rahmen.jpg | empfohlen: 1200×900 -->
+      <img class="media" src="images/bild1_rahmen.jpg"
+           alt="DoKa Schießsport Anlagen – elektronischer Zielrahmen"
+           loading="eager">
+    </div>
   </div>
 </header>
 
 <section id="funktion">
   <h2>Funktionsumfang</h2>
-  <p class="intro">Der Aufbau wird von Anfang an modular geplant: Mechanik, Sensorik, Auswertungsbox und Anzeige können getrennt aufgebaut, gewartet und später erweitert werden.</p>
+  <p class="intro">
+    Der Aufbau wird von Anfang an modular geplant: Mechanik, Sensorik, Auswertungsbox
+    und Anzeige können getrennt aufgebaut, gewartet und später erweitert werden.
+  </p>
+
   <div class="grid">
-    <article class="card"><div class="icon">◎</div><h3>Akustische Treffererfassung</h3><p>Vier Mikrofone erfassen den Treffer in der Akustikkammer. Die Position wird später über die Laufzeitunterschiede bestimmt.</p></article>
-    <article class="card"><div class="icon">▦</div><h3>Digitale Auswertung</h3><p>ESP32 und Mehrkanal-ADC übernehmen die Erfassung. Die eigentliche Auswertung und Darstellung kann in Python erfolgen.</p></article>
-    <article class="card"><div class="icon">◉</div><h3>OSD & Trefferanzeige</h3><p>Konfigurierbare Zielanzeige, Trefferpunkte, Farben und Hintergrund – passend zum eigenen Trainingsplatz.</p></article>
-    <article class="card"><div class="icon">⌁</div><h3>Modulare Verkabelung</h3><p>Die Sensorik bleibt im Rahmen. Nach außen soll möglichst nur ein Cat7-Kabel geführt werden; die Anzeige kann per WLAN angebunden werden.</p></article>
-    <article class="card"><div class="icon">↗</div><h3>Statistik</h3><p>Schüsse, Serien, Durchschnittswerte und Benutzerstatistiken können gespeichert und später als Bericht ausgegeben werden.</p></article>
-    <article class="card"><div class="icon">⚙</div><h3>Kalibrierbar</h3><p>Die spätere Software erhält eine Kalibrierung, damit die gemessene Trefferposition reproduzierbar auf das Ziel übertragen wird.</p></article>
+    <article class="card"><div class="icon">◎</div><h3>Akustische Treffererfassung</h3>
+      <p>Vier Mikrofone erfassen den Treffer in der Akustikkammer. Die Position wird später über die Laufzeitunterschiede bestimmt.</p></article>
+    <article class="card"><div class="icon">▦</div><h3>Digitale Auswertung</h3>
+      <p>ESP32 und Mehrkanal-ADC übernehmen die Erfassung. Die eigentliche Auswertung und Darstellung kann in Python erfolgen.</p></article>
+    <article class="card"><div class="icon">◉</div><h3>OSD & Trefferanzeige</h3>
+      <p>Konfigurierbare Zielanzeige, Trefferpunkte, Farben und Hintergrund – passend zum eigenen Trainingsplatz.</p></article>
+    <article class="card"><div class="icon">⌁</div><h3>Modulare Verkabelung</h3>
+      <p>Die Sensorik bleibt im Rahmen. Nach außen soll möglichst nur ein Cat7-Kabel geführt werden; die Anzeige kann per WLAN angebunden werden.</p></article>
+    <article class="card"><div class="icon">↗</div><h3>Statistik</h3>
+      <p>Schüsse, Serien, Durchschnittswerte und Benutzerstatistiken können gespeichert und später als Bericht ausgegeben werden.</p></article>
+    <article class="card"><div class="icon">⚙</div><h3>Kalibrierbar</h3>
+      <p>Die spätere Software erhält eine Kalibrierung, damit die gemessene Trefferposition reproduzierbar auf das Ziel übertragen wird.</p></article>
   </div>
 </section>
 
 <section id="technik">
   <h2>Technischer Aufbau</h2>
-  <p class="intro">Der Zielrahmen basiert auf 25×25-mm-Nut-6-Aluminiumprofilen. Die empfindliche Akustik bleibt lokal am Ziel; die Daten werden digital zur Auswertungsbox übertragen.</p>
+  <p class="intro">
+    Der Zielrahmen basiert auf 25×25-mm-Nut-6-Aluminiumprofilen. Die empfindliche Akustik
+    bleibt lokal am Ziel; die Daten werden digital zur Auswertungsbox übertragen.
+  </p>
   <div class="spec">
     <div><b>Rahmen</b><span>25×25 Nut-6 Aluminiumprofil</span></div>
     <div><b>Akustik</b><span>4 Mikrofonkanäle in der Akustikkammer</span></div>
@@ -71,35 +134,83 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:13px}
 
 <section id="screens">
   <h2>Screenshots & Entwicklung</h2>
-  <p class="intro">Hier kommen später echte Screenshots der Software und Musterbilder des aufgebauten Systems hinein.</p>
+  <p class="intro">Einfach die beiden Dateien in den Ordner <b>images</b> kopieren.</p>
+
   <div class="shots">
     <figure class="shot">
-      <div class="placeholder"><div><strong>Screenshot 01</strong>shooting_app_01.png</div></div>
-      <figcaption>OSD / Trefferanzeige – Screenshot hier einsetzen.</figcaption>
+      <div class="screenshot-media">
+        <!-- Datei: images/shooting_app_01.png | empfohlen: 1600×900 -->
+        <img class="media" src="images/shooting_app_01.png"
+             alt="Screenshot der Trefferanzeige" loading="lazy">
+      </div>
+      <figcaption>OSD / Trefferanzeige</figcaption>
     </figure>
+
     <figure class="shot">
-      <img src="images/shooting_app_01.png">
-      <figcaption>Statistik / Auswertung – Screenshot hier einsetzen.</figcaption>
+      <div class="screenshot-media">
+        <!-- Datei: images/shooting_app_02.png | empfohlen: 1600×900 -->
+        <img class="media" src="images/shooting_app_02.png"
+             alt="Screenshot der Statistik und Auswertung" loading="lazy">
+      </div>
+      <figcaption>Statistik / Auswertung</figcaption>
     </figure>
   </div>
 </section>
 
-<section>
+<section id="galerie">
   <h2>Musterbilder</h2>
-  <p class="intro">Platzhalter für spätere Produktfotos, technische Renderings und Detailaufnahmen des Rahmens.</p>
-  <div class="shots">
-    <figure class="shot"><div class="placeholder"><div><strong>Musterbild A</strong>Zielrahmen – Gesamtansicht</div></div></figure>
-    <figure class="shot"><div class="placeholder"><div><strong>Musterbild B</strong>Akustikkammer – Detail</div></div></figure>
+  <p class="intro">Produktfotos, technische Details und Aufnahmen des späteren Systems.</p>
+
+  <div class="gallery">
+    <figure class="shot">
+      <div class="product-media">
+        <!-- Datei: images/produkt_01.jpg | empfohlen: 1200×900 -->
+        <img class="media" src="images/produkt_01.jpg"
+             alt="Zielrahmen Gesamtansicht" loading="lazy">
+      </div>
+      <figcaption>Zielrahmen – Gesamtansicht</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <div class="detail-media">
+        <!-- Datei: images/produkt_02.jpg | empfohlen: 1200×900 -->
+        <img class="media" src="images/produkt_02.jpg"
+             alt="Akustikkammer und Mikrofonaufnahme" loading="lazy">
+      </div>
+      <figcaption>Akustikkammer – Detail</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <div class="detail-media">
+        <!-- Datei: images/produkt_03.jpg | empfohlen: 1200×900 -->
+        <img class="media" src="images/produkt_03.jpg"
+             alt="Auswertungsbox" loading="lazy">
+      </div>
+      <figcaption>Auswertungsbox</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <div class="detail-media">
+        <!-- Datei: images/produkt_04.jpg | empfohlen: 1200×900 -->
+        <img class="media" src="images/produkt_04.jpg"
+             alt="Monitor und Bedientastatur" loading="lazy">
+      </div>
+      <figcaption>Monitor & 4-Tasten-Bedienung</figcaption>
+    </figure>
   </div>
 </section>
 
 <section id="kontakt">
   <h2>Vom Prototyp zum System</h2>
-  <p class="intro">Das Projekt wird zunächst als private Trainingsanlage entwickelt. Der Schwerpunkt liegt auf einer reproduzierbaren Messung, modularer Hardware und einer einfach bedienbaren Software.</p>
+  <p class="intro">
+    Das Projekt wird zunächst als private Trainingsanlage entwickelt.
+    Der Schwerpunkt liegt auf einer reproduzierbaren Messung, modularer Hardware
+    und einer einfach bedienbaren Software.
+  </p>
   <a class="btn" href="mailto:info@example.de">Kontakt / Projekt</a>
 </section>
 
-<footer>© 2026 TARGETLAB · Entwicklungsprojekt · Private Trainingszielanlage</footer>
+<footer>© 2026 DoKa Schießsport Anlagen · Entwicklungsprojekt · Private Trainingszielanlage</footer>
 </div>
 </body>
 </html>

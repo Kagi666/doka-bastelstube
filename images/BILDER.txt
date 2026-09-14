@@ -1,0 +1,14 @@
+BILDER FÜR DIE WEBSITE
+
+Einfach diese Dateien in diesen Ordner kopieren:
+1. bild1_rahmen.jpg       = großer Zielrahmen im Startbereich
+2. shooting_app_01.png    = Screenshot OSD / Trefferanzeige
+3. shooting_app_02.png    = Screenshot Statistik / Auswertung
+4. produkt_01.jpg         = Zielrahmen Gesamtansicht
+5. produkt_02.jpg         = Akustikkammer / Mikrofonaufnahme
+6. produkt_03.jpg         = Auswertungsbox
+7. produkt_04.jpg         = Monitor + 4-Tasten-Bedienung
+
+Empfohlene Größen stehen im HTML-Kommentar. Andere Größen funktionieren ebenfalls.
+Die Seite passt die Bilder automatisch an die vorgesehenen Bildflächen an.
+Kein HTML-Anpassen notwendig.
