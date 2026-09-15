@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lipper Gold – regionaler Honig aus dem Weserbergland und Lippe.">
+  <title>Lipper Gold – Honig aus dem Weserbergland & Lippe</title>
+  <style>
+    :root{
+      --cream:#faf5e8; --paper:#fffdf7; --gold:#d99b17; --gold2:#f0c85b;
+      --green:#40562d; --dark:#292318; --line:#e8dcc1;
+      --shadow:0 18px 50px rgba(48,37,22,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--dark);background:var(--cream);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
+    a{color:inherit}
+    .wrap{max-width:1180px;margin:auto;padding:0 24px}
+    header{background:rgba(255,253,247,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;backdrop-filter:blur(10px)}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand-mark{width:50px;height:50px;border:1px solid var(--gold);border-radius:14px 14px 14px 4px;display:grid;place-items:center;font-size:25px}
+    .brand strong{display:block;font-family:Georgia,serif;font-size:27px;line-height:1}
+    .brand small{display:block;color:var(--gold);font-weight:600;margin-top:4px}
+    nav{display:flex;gap:30px}
+    nav a{text-decoration:none;font-weight:600}
+    nav a:hover{color:var(--gold)}
+    .hero{position:relative;min-height:650px;display:grid;align-items:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:
+      linear-gradient(90deg,rgba(250,245,232,.98) 0%,rgba(250,245,232,.93) 37%,rgba(250,245,232,.18) 70%),
+      url("lipper-gold-grafik.png") center/cover no-repeat;filter:saturate(.92)}
+    .hero-content{position:relative;z-index:1;max-width:620px;padding:80px 0}
+    .eyebrow{text-transform:uppercase;letter-spacing:.18em;color:var(--gold);font-weight:800;font-size:.82rem}
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
+    h1{font-size:clamp(4rem,8vw,7rem);line-height:.95;margin:16px 0;color:var(--dark)}
+    .hero h2{font-size:clamp(1.7rem,3vw,2.6rem);line-height:1.15;color:var(--green);font-weight:500;margin:0 0 20px}
+    .hero p{font-size:1.18rem;max-width:500px}
+    .btn{display:inline-block;background:var(--gold);color:#fff;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:800;box-shadow:0 8px 20px rgba(217,155,23,.25);margin-top:12px}
+    .btn:hover{background:#b97d0b;transform:translateY(-1px)}
+    .benefits{background:var(--paper);border-bottom:1px solid var(--line)}
+    .benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:35px 0}
+    .benefit{display:flex;gap:18px;padding:10px 35px;border-right:1px solid var(--line)}
+    .benefit:last-child{border:0}
+    .icon{width:56px;height:56px;border:1px solid var(--gold2);border-radius:50%;display:grid;place-items:center;font-size:25px;flex:none}
+    .benefit h3{margin:0 0 4px;font-size:1.2rem;color:var(--green)}
+    .benefit p{margin:0;font-size:.93rem}
+    section{padding:90px 0}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .kicker{color:var(--gold);font-weight:800;letter-spacing:.08em}
+    h2{font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.05;color:var(--green);margin:10px 0 25px}
+    .story-img{border-radius:18px;box-shadow:var(--shadow);width:100%;display:block}
+    .signature{font-family:"Brush Script MT",cursive;color:var(--gold);font-size:1.8rem;margin-top:28px}
+    .honey{background:var(--paper)}
+    .center{text-align:center;max-width:760px;margin:0 auto 42px}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .product{background:var(--cream);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-align:center}
+    .product img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover}
+    .product div{padding:18px}
+    .product h3{font-size:1.35rem;color:var(--green);margin:0 0 5px}
+    .product p{margin:0;font-size:.92rem}
+    .contact{background:var(--green);color:#fff}
+    .contact h2{color:#fff}
+    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+    .contact-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);padding:30px;border-radius:16px}
+    .contact-card p{margin:8px 0}
+    footer{background:#28351e;color:#eee;padding:26px 0}
+    footer .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.9rem}
+    .mobile-note{display:none}
+    @media(max-width:900px){
+      nav{gap:14px}
+      .benefit-grid,.products,.two-col,.contact-grid{grid-template-columns:1fr 1fr}
+      .benefit:nth-child(2){border:0}
+      .benefit:last-child{grid-column:1/-1;border-top:1px solid var(--line);padding-top:25px}
+      .products{grid-template-columns:1fr 1fr}
+      .two-col{gap:35px}
+    }
+    @media(max-width:650px){
+      .nav{height:auto;padding:16px 0;align-items:flex-start}
+      nav{display:none}
+      .brand strong{font-size:23px}
+      .hero{min-height:620px}
+      .hero-bg{background:
+        linear-gradient(90deg,rgba(250,245,232,.96),rgba(250,245,232,.72)),
+        url("lipper-gold-grafik.png") 60% center/cover no-repeat}
+      .hero-content{padding:70px 0}
+      h1{font-size:4rem}
+      .benefit-grid,.products,.two-col,.contact-grid{grid-template-columns:1fr}
+      .benefit{border:0!important;border-bottom:1px solid var(--line)!important;padding:18px 0!important}
+      .benefit:last-child{border-bottom:0!important}
+      section{padding:65px 0}
+      .two-col .story-img{order:-1}
+      .product img{aspect-ratio:1.25/1}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#start" aria-label="Lipper Gold Startseite">
+      <span class="brand-mark">🐝</span>
+      <span><strong>Lipper Gold</strong><small>Honig aus dem Weserbergland & Lippe</small></span>
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <a href="#start">Start</a>
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#honig">Honig</a>
+      <a href="#region">Region</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="start">
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-content">
+        <div class="eyebrow">Kleine Hobby-Imkerei · Lippe</div>
+        <h1>Lipper Gold</h1>
+        <h2>Honig aus dem Weserbergland & Lippe</h2>
+        <p>Reiner Honig. Ehrlich produziert. Aus unserer Heimat – für Genießer.</p>
+        <a class="btn" href="#ueber-uns">Mehr über unsere Imkerei</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="benefits">
+    <div class="wrap benefit-grid">
+      <div class="benefit">
+        <div class="icon">🌿</div>
+        <div><h3>Regional</h3><p>Unsere Bienen sammeln Nektar in den blühenden Landschaften von Weserbergland und Lippe.</p></div>
+      </div>
+      <div class="benefit">
+        <div class="icon">🐝</div>
+        <div><h3>Natürlich</h3><p>Honig mit Respekt vor dem Naturprodukt und dem Leben unserer Bienenvölker.</p></div>
+      </div>
+      <div class="benefit">
+        <div class="icon">♡</div>
+        <div><h3>Mit Liebe</h3><p>Kleine Hobby-Imkerei mit viel Leidenschaft und persönlichem Einsatz.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="ueber-uns">
+    <div class="wrap two-col">
+      <div>
+        <div class="kicker">UNSERE IMKEREI</div>
+        <h2>Mit Liebe zu Bienen und Natur</h2>
+        <p>Lipper Gold ist eine kleine Hobby-Imkerei mit großer Leidenschaft. Wir kümmern uns mit Herz um unsere Bienenvölker und achten auf eine naturnahe Bienenhaltung.</p>
+        <p>So entsteht Honig von bester Qualität – direkt aus unserer schönen Heimat.</p>
+        <div class="signature">Eure Imker aus Lippe ♡</div>
+      </div>
+      <img class="story-img" src="lipper-gold-grafik.png" alt="Imkerei und Honig aus dem Weserbergland und Lippe">
+    </div>
+  </section>
+
+  <section class="honey" id="honig">
+    <div class="wrap">
+      <div class="center">
+        <div class="kicker">AUS UNSEREN VÖLKERN</div>
+        <h2>Unser Honig – so vielfältig wie unsere Natur</h2>
+        <p>Je nach Standort, Jahreszeit und Blüte entstehen unterschiedliche Geschmackswelten.</p>
+      </div>
+      <div class="products">
+        <article class="product">
+          <img src="lipper-gold-grafik.png" alt="Blütenhonig" loading="lazy">
+          <div><h3>Blütenhonig</h3><p>Mild und blumig – ein Allrounder für jeden Tag.</p></div>
+        </article>
+        <article class="product">
+          <img src="lipper-gold-grafik.png" alt="Waldhonig" loading="lazy">
+          <div><h3>Waldhonig</h3><p>Kräftig und aromatisch – mit würziger Note.</p></div>
+        </article>
+        <article class="product">
+          <img src="lipper-gold-grafik.png" alt="Rapshonig" loading="lazy">
+          <div><h3>Rapshonig</h3><p>Zart und cremig – lieblich im Geschmack.</p></div>
+        </article>
+        <article class="product">
+          <img src="lipper-gold-grafik.png" alt="Sommerhonig" loading="lazy">
+          <div><h3>Sommerhonig</h3><p>Süß und goldig – der Geschmack des Sommers im Glas.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="region">
+    <div class="wrap center">
+      <div class="kicker">UNSERE HEIMAT</div>
+      <h2>Weserbergland & Lippe</h2>
+      <p>Wiesen, Wälder, Obstbäume und Gärten prägen die Landschaft. Diese Vielfalt macht unsere Region zu einem wertvollen Lebensraum für Bienen – und gibt unserem Honig seinen regionalen Charakter.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="kicker">DIREKT AUS DER REGION</div>
+        <h2>Interesse an Lipper Gold?</h2>
+        <p>Du möchtest mehr über unseren Honig erfahren oder ein Glas bestellen? Schreib uns einfach.</p>
+        <a class="btn" href="mailto:info@lipper-gold.de">Kontakt aufnehmen</a>
+      </div>
+      <div class="contact-card">
+        <p><strong>📞 Telefon</strong><br>0171 1234567</p>
+        <p><strong>✉ E-Mail</strong><br>info@lipper-gold.de</p>
+        <p><strong>⌖ Region</strong><br>Lippe & Weserbergland</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>🐝 © 2026 Lipper Gold – Honig aus dem Weserbergland & Lippe</span>
+    <span>Impressum · Datenschutz</span>
+  </div>
+</footer>
+
+</body>
+</html>
