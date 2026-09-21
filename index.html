@@ -1,216 +1,192 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DoKa Schießsport Anlagen</title>
-<meta name="description" content="Modulare elektronische Trainingszielanlage für das private Schießtraining.">
-<style>
-:root{
-  --bg:#081019;--panel:#101c28;--panel2:#152534;--text:#eef5f8;
-  --muted:#9db0bd;--accent:#1fca8a;--line:#263949;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:linear-gradient(180deg,#071018,#0b1620 55%,#081018);
-  color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif
-}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1120px;margin:auto;padding:0 24px}
-nav{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
-.logo{font-weight:800;letter-spacing:.04em}.logo span{color:var(--accent)}
-nav .links{display:flex;gap:24px;color:var(--muted);font-size:14px}
-.hero{padding:92px 0 80px;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
-.kicker{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.13em;font-size:12px}
-h1{font-size:clamp(42px,6vw,72px);line-height:.98;margin:16px 0 24px;letter-spacing:-.045em}
-h2{font-size:34px;margin:0 0 14px}h3{margin:0 0 8px}
-.lead{font-size:20px;line-height:1.55;color:var(--muted);max-width:650px}
-.btn{display:inline-block;margin-top:28px;padding:13px 20px;border-radius:8px;background:var(--accent);color:#06110d;font-weight:800}
-.hero-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 20px 60px #0005}
-
-/* Alle Bilder werden automatisch passend zugeschnitten – kein HTML-Anpassen nötig. */
-.media{
-  width:100%;height:100%;display:block;object-fit:cover;
-  object-position:center;border-radius:11px;
-}
-.hero-media{aspect-ratio:4/3;overflow:hidden;border-radius:11px;background:#0c1720}
-.screenshot-media{aspect-ratio:16/9;overflow:hidden;background:#0c1720}
-.product-media{aspect-ratio:4/3;overflow:hidden;background:#0c1720}
-.detail-media{aspect-ratio:4/3;overflow:hidden;background:#0c1720}
-
-section{padding:80px 0;border-top:1px solid var(--line)}
-.intro{max-width:700px;margin-bottom:34px;color:var(--muted);line-height:1.7}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
-.card p{color:var(--muted);line-height:1.6;margin-bottom:0}.icon{font-size:25px;margin-bottom:18px}
-.shots{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.shot{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;overflow:hidden}
-.shot figcaption{padding:12px 4px 2px;color:var(--muted);font-size:14px}
-.spec{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:850px}
-.spec div{padding:17px 19px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
-.spec b{display:block;margin-bottom:5px}.spec span{color:var(--muted)}
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.gallery .shot{padding:10px}
-footer{padding:40px 0 60px;color:var(--muted);font-size:13px}
-@media(max-width:800px){
-  .hero{grid-template-columns:1fr;padding-top:60px}
-  .grid,.shots,.spec{grid-template-columns:1fr}
-  .gallery{grid-template-columns:1fr 1fr}
-  nav .links{display:none}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DoKa-Bastelstube.de – 3D-Druck, 3D-Scan, Prototypen, Ersatzteile, Elektronik und Sonderanfertigungen.">
+  <meta name="theme-color" content="#0b0f14">
+  <title>DoKa-Bastelstube.de | 3D-Druck & Sonderanfertigungen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="#top" aria-label="DoKa-Bastelstube Startseite">
+        <span class="brand-mark">DK</span>
+        <span>DoKa-Bastelstube<span class="dot">.</span>de</span>
+      </a>
+      <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a class="nav-cta" href="#kontakt">Projekt anfragen</a>
+      </div>
+    </nav>
+  </header>
 
-<nav>
-  <div class="logo">DoKa <span>Schießsport Anlagen</span></div>
-  <div class="links">
-    <a href="#funktion">Funktion</a><a href="#technik">Technik</a>
-    <a href="#screens">Screenshots</a><a href="#galerie">Galerie</a><a href="#kontakt">Projekt</a>
-  </div>
-</nav>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid container">
+        <div class="hero-copy">
+          <p class="eyebrow">DIGITAL • HANDWERK • INDIVIDUELL</p>
+          <h1>Aus einer Idee wird<br><span>etwas Echtes.</span></h1>
+          <p class="hero-text">
+            3D-Druck, 3D-Scan, Prototypen, Ersatzteile, Elektronik und
+            Sonderanfertigungen – pragmatisch umgesetzt, sauber gebaut.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#kontakt">Projekt starten <span>→</span></a>
+            <a class="button button-ghost" href="#leistungen">Leistungen ansehen</a>
+          </div>
+          <div class="hero-facts">
+            <div><strong>6+</strong><span>Leistungsbereiche</span></div>
+            <div><strong>1:1</strong><span>individuelle Lösungen</span></div>
+            <div><strong>Made</strong><span>mit Liebe zum Detail</span></div>
+          </div>
+        </div>
 
-<header class="hero">
-  <div>
-    <div class="kicker">Privates Schießtraining · modular · digital</div>
-    <h1>Elektronische Treffer­auswertung neu gedacht.</h1>
-    <p class="lead">
-      Eine modulare Trainingszielanlage mit akustischer Treffererfassung,
-      digitaler Auswertung und übersichtlichem OSD – entwickelt für das private Training.
-    </p>
-    <a class="btn" href="#funktion">Funktionsumfang ansehen</a>
-  </div>
+        <div class="hero-art" aria-label="Abstrakte Darstellung eines 3D-Druck-Objekts">
+          <div class="glow"></div>
+          <div class="wireframe">
+            <span class="wf wf-1"></span><span class="wf wf-2"></span><span class="wf wf-3"></span>
+            <span class="wf wf-4"></span><span class="wf wf-5"></span><span class="wf wf-6"></span>
+          </div>
+          <div class="model-card">
+            <div class="model-top">3D / PROTOTYPE</div>
+            <div class="cube">
+              <div class="face front">DK</div><div class="face back"></div>
+              <div class="face right"></div><div class="face left"></div>
+              <div class="face top"></div><div class="face bottom"></div>
+            </div>
+            <div class="model-bottom"><span>Custom Part</span><span>01 / 01</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="hero-card">
-    <div class="hero-media">
-      <!-- Datei: images/bild1_rahmen.jpg | empfohlen: 1200×900 -->
-      <img class="media" src="images/bild1_rahmen.jpg"
-           alt="DoKa Schießsport Anlagen – elektronischer Zielrahmen"
-           loading="eager">
+    <section id="leistungen" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">WAS WIR MACHEN</p>
+            <h2>Technik, die passt.</h2>
+          </div>
+          <p>Vom ersten Entwurf bis zum fertigen Einzelstück. Du bringst die Idee – wir kümmern uns um die Umsetzung.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card featured">
+            <span class="service-number">01</span>
+            <div class="service-icon">▣</div>
+            <h3>3D-Druck</h3>
+            <p>Funktionsteile, Gehäuse, Halterungen, Modelle und Einzelstücke in passenden Materialien.</p>
+            <span class="tag">FDM / Resin</span>
+          </article>
+          <article class="service-card">
+            <span class="service-number">02</span>
+            <div class="service-icon">⌁</div>
+            <h3>3D-Scan</h3>
+            <p>Objekte digital erfassen, Maße übernehmen und daraus bearbeitbare 3D-Daten erzeugen.</p>
+            <span class="tag">Reverse Engineering</span>
+          </article>
+          <article class="service-card">
+            <span class="service-number">03</span>
+            <div class="service-icon">◇</div>
+            <h3>Prototypen</h3>
+            <p>Schnelle Iterationen vom Konzept zum greifbaren Prototyp – für Tests, Anpassungen und Präsentationen.</p>
+            <span class="tag">Iterativ</span>
+          </article>
+          <article class="service-card">
+            <span class="service-number">04</span>
+            <div class="service-icon">◫</div>
+            <h3>Ersatzteile</h3>
+            <p>Defekte oder nicht mehr erhältliche Teile nachbauen und individuell anpassen.</p>
+            <span class="tag">Nach Maß</span>
+          </article>
+          <article class="service-card">
+            <span class="service-number">05</span>
+            <div class="service-icon">⌘</div>
+            <h3>Elektronik</h3>
+            <p>Kleine elektronische Lösungen, Verdrahtung, Einbau und individuelle technische Anpassungen.</p>
+            <span class="tag">Custom</span>
+          </article>
+          <article class="service-card">
+            <span class="service-number">06</span>
+            <div class="service-icon">✦</div>
+            <h3>Sonderanfertigungen</h3>
+            <p>Wenn es nichts von der Stange gibt: Wir entwickeln eine Lösung, die zu deinem Projekt passt.</p>
+            <span class="tag">Einzelstück</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ablauf" class="section process-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">VON DER IDEE ZUM TEIL</p>
+            <h2>Einfacher Ablauf.</h2>
+          </div>
+        </div>
+        <div class="process-grid">
+          <div class="process-step"><span>01</span><h3>Idee teilen</h3><p>Beschreibe dein Vorhaben oder schick uns Fotos, Maße und Skizzen.</p></div>
+          <div class="process-step"><span>02</span><h3>Planen</h3><p>Wir klären Anforderungen, Material, Maße und die sinnvollste Umsetzung.</p></div>
+          <div class="process-step"><span>03</span><h3>Umsetzen</h3><p>Vom CAD-Modell über Prototyping bis zur fertigen Sonderanfertigung.</p></div>
+          <div class="process-step"><span>04</span><h3>Fertig</h3><p>Du bekommst dein fertiges Teil – auf Wunsch mit weiteren Iterationen.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ueber-uns" class="about section">
+      <div class="container about-grid">
+        <div class="about-panel">
+          <p class="eyebrow">DIE BASTELSTUBE</p>
+          <h2>Kleine Werkstatt.<br>Große Möglichkeiten.</h2>
+          <p>DoKa-Bastelstube.de steht für individuelle Lösungen statt Massenware. Wir verbinden digitale Fertigung mit praktischem Tüfteln und finden auch dann einen Weg, wenn Standardteile nicht weiterhelfen.</p>
+          <div class="quote">„Geht nicht gibt's nicht – wir schauen, was möglich ist.“</div>
+        </div>
+        <div class="specs">
+          <div><span>01</span><strong>Individuell</strong><p>Jedes Projekt wird passend zu deinem Bedarf gedacht.</p></div>
+          <div><span>02</span><strong>Praktisch</strong><p>Funktion steht im Mittelpunkt – nicht nur die Optik.</p></div>
+          <div><span>03</span><strong>Detailverliebt</strong><p>Saubere Konstruktion und sorgfältige Umsetzung.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="contact section">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">LOS GEHT'S</p>
+          <h2>Erzähl uns von<br>deinem Projekt.</h2>
+          <p>Schick uns kurz, was du brauchst. Fotos, Skizzen oder vorhandene 3D-Dateien kannst du bei der Anfrage einfach erwähnen.</p>
+          <div class="contact-details">
+            <div><span>MAIL</span><a href="mailto:info@doka-bastelstube.de">info@doka-bastelstube.de</a></div>
+            <div><span>WEB</span><a href="https://doka-bastelstube.de">doka-bastelstube.de</a></div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <label>Name<input required name="name" placeholder="Dein Name"></label>
+          <label>E-Mail<input required type="email" name="email" placeholder="deine@email.de"></label>
+          <label>Worum geht's?<textarea required name="message" rows="6" placeholder="Kurz beschreiben..."></textarea></label>
+          <button class="button button-primary" type="submit">Anfrage vorbereiten <span>→</span></button>
+          <p class="form-note">Der Button öffnet dein E-Mail-Programm mit einer vorbereiteten Anfrage.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="#top"><span class="brand-mark">DK</span><span>DoKa-Bastelstube.de</span></a>
+      <span>© <span id="year"></span> DoKa-Bastelstube.de</span>
+      <a href="#top">Nach oben ↑</a>
     </div>
-  </div>
-</header>
-
-<section id="funktion">
-  <h2>Funktionsumfang</h2>
-  <p class="intro">
-    Der Aufbau wird von Anfang an modular geplant: Mechanik, Sensorik, Auswertungsbox
-    und Anzeige können getrennt aufgebaut, gewartet und später erweitert werden.
-  </p>
-
-  <div class="grid">
-    <article class="card"><div class="icon">◎</div><h3>Akustische Treffererfassung</h3>
-      <p>Vier Mikrofone erfassen den Treffer in der Akustikkammer. Die Position wird später über die Laufzeitunterschiede bestimmt.</p></article>
-    <article class="card"><div class="icon">▦</div><h3>Digitale Auswertung</h3>
-      <p>ESP32 und Mehrkanal-ADC übernehmen die Erfassung. Die eigentliche Auswertung und Darstellung kann in Python erfolgen.</p></article>
-    <article class="card"><div class="icon">◉</div><h3>OSD & Trefferanzeige</h3>
-      <p>Konfigurierbare Zielanzeige, Trefferpunkte, Farben und Hintergrund – passend zum eigenen Trainingsplatz.</p></article>
-    <article class="card"><div class="icon">⌁</div><h3>Modulare Verkabelung</h3>
-      <p>Die Sensorik bleibt im Rahmen. Nach außen soll möglichst nur ein Cat7-Kabel geführt werden; die Anzeige kann per WLAN angebunden werden.</p></article>
-    <article class="card"><div class="icon">↗</div><h3>Statistik</h3>
-      <p>Schüsse, Serien, Durchschnittswerte und Benutzerstatistiken können gespeichert und später als Bericht ausgegeben werden.</p></article>
-    <article class="card"><div class="icon">⚙</div><h3>Kalibrierbar</h3>
-      <p>Die spätere Software erhält eine Kalibrierung, damit die gemessene Trefferposition reproduzierbar auf das Ziel übertragen wird.</p></article>
-  </div>
-</section>
-
-<section id="technik">
-  <h2>Technischer Aufbau</h2>
-  <p class="intro">
-    Der Zielrahmen basiert auf 25×25-mm-Nut-6-Aluminiumprofilen. Die empfindliche Akustik
-    bleibt lokal am Ziel; die Daten werden digital zur Auswertungsbox übertragen.
-  </p>
-  <div class="spec">
-    <div><b>Rahmen</b><span>25×25 Nut-6 Aluminiumprofil</span></div>
-    <div><b>Akustik</b><span>4 Mikrofonkanäle in der Akustikkammer</span></div>
-    <div><b>Controller</b><span>ESP32 als Erfassungs- und Kommunikationsmodul</span></div>
-    <div><b>Verbindung</b><span>Cat7 vom Rahmen zur Auswertungsbox</span></div>
-    <div><b>Anzeige</b><span>WLAN zum Linux-PC / Monitor</span></div>
-    <div><b>Software</b><span>Python für Auswertung, OSD und Statistik</span></div>
-  </div>
-</section>
-
-<section id="screens">
-  <h2>Screenshots & Entwicklung</h2>
-  <p class="intro">Einfach die beiden Dateien in den Ordner <b>images</b> kopieren.</p>
-
-  <div class="shots">
-    <figure class="shot">
-      <div class="screenshot-media">
-        <!-- Datei: images/shooting_app_01.png | empfohlen: 1600×900 -->
-        <img class="media" src="images/shooting_app_01.png"
-             alt="Screenshot der Trefferanzeige" loading="lazy">
-      </div>
-      <figcaption>OSD / Trefferanzeige</figcaption>
-    </figure>
-
-    <figure class="shot">
-      <div class="screenshot-media">
-        <!-- Datei: images/shooting_app_02.png | empfohlen: 1600×900 -->
-        <img class="media" src="images/shooting_app_02.png"
-             alt="Screenshot der Statistik und Auswertung" loading="lazy">
-      </div>
-      <figcaption>Statistik / Auswertung</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section id="galerie">
-  <h2>Musterbilder</h2>
-  <p class="intro">Produktfotos, technische Details und Aufnahmen des späteren Systems.</p>
-
-  <div class="gallery">
-    <figure class="shot">
-      <div class="product-media">
-        <!-- Datei: images/produkt_01.jpg | empfohlen: 1200×900 -->
-        <img class="media" src="images/produkt_01.jpg"
-             alt="Zielrahmen Gesamtansicht" loading="lazy">
-      </div>
-      <figcaption>Zielrahmen – Gesamtansicht</figcaption>
-    </figure>
-
-    <figure class="shot">
-      <div class="detail-media">
-        <!-- Datei: images/produkt_02.jpg | empfohlen: 1200×900 -->
-        <img class="media" src="images/produkt_02.jpg"
-             alt="Akustikkammer und Mikrofonaufnahme" loading="lazy">
-      </div>
-      <figcaption>Akustikkammer – Detail</figcaption>
-    </figure>
-
-    <figure class="shot">
-      <div class="detail-media">
-        <!-- Datei: images/produkt_03.jpg | empfohlen: 1200×900 -->
-        <img class="media" src="images/produkt_03.jpg"
-             alt="Auswertungsbox" loading="lazy">
-      </div>
-      <figcaption>Auswertungsbox</figcaption>
-    </figure>
-
-    <figure class="shot">
-      <div class="detail-media">
-        <!-- Datei: images/produkt_04.jpg | empfohlen: 1200×900 -->
-        <img class="media" src="images/produkt_04.jpg"
-             alt="Monitor und Bedientastatur" loading="lazy">
-      </div>
-      <figcaption>Monitor & 4-Tasten-Bedienung</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section id="kontakt">
-  <h2>Vom Prototyp zum System</h2>
-  <p class="intro">
-    Das Projekt wird zunächst als private Trainingsanlage entwickelt.
-    Der Schwerpunkt liegt auf einer reproduzierbaren Messung, modularer Hardware
-    und einer einfach bedienbaren Software.
-  </p>
-  <a class="btn" href="mailto:info@example.de">Kontakt / Projekt</a>
-</section>
-
-<footer>© 2026 DoKa Schießsport Anlagen · Entwicklungsprojekt · Private Trainingszielanlage</footer>
-</div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
